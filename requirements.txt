@@ -1,0 +1,16 @@
+# Pinned on purpose - don't unpin one without unpinning all four.
+#
+# mediapipe 0.10.30+ (incl. 1.0.x) ships macOS wheels that abort the moment
+# they open a detector, so it's held at 0.10.21. That build needs NumPy 1.x.
+# OpenCV 5 needs NumPy 2, and 0.10.21 asks for an *unpinned* opencv-contrib-python,
+# which quietly drags OpenCV 5 (and therefore NumPy 2) back in if you let it.
+mediapipe==0.10.21
+numpy<2
+opencv-python<5
+opencv-contrib-python<5
+
+pyautogui
+
+# For --voice: "open <something>" spoken commands
+SpeechRecognition
+PyAudio
